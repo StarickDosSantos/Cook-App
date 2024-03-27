@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
         bottom:24,
         width:"100%",
         alignSelf:"center",
+        
 
     },
     header:{
@@ -21,7 +22,7 @@ export const styles = StyleSheet.create({
 
     },
     label:{
-        color:theme.colors.gray_400,
+        color:theme.colors.white,
         fontSize:theme.fonts.size.body.sm,
         fontFamily:theme.fonts.family.regular,
     },

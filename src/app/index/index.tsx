@@ -5,6 +5,7 @@ import { styles } from "./styles"
 import React, { useState } from "react"
 import { Ingredient } from "@/components/Ingredient"
 import { Selected } from "@/components/Selected"
+import { router } from "expo-router"
 
 
 
@@ -30,6 +31,10 @@ function handleClearSelected(){
 
     ])
     setSelected([])
+}
+//Esta função serve para mudar de pagina assim que clicar no botão encontar
+function handleSearch(){
+    router.navigate("/Recipes/")
 }
 
     return(
@@ -64,7 +69,7 @@ function handleClearSelected(){
                 <Selected
                     quantity={selected.length}
                     onClear={handleClearSelected}
-                    onSearch={() => {}}
+                    onSearch={handleSearch}
                 />
            )}
 
