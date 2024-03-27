@@ -9,8 +9,20 @@ export const styles = StyleSheet.create({
         borderRadius:theme.borderRadius.lg,
         position:"absolute",
         bottom:24,
+        width:"100%",
+        alignSelf:"center",
 
     },
-    header:{},
-    label:{},
+    header:{
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:"center",
+        marginBottom: 34,
+
+    },
+    label:{
+        color:theme.colors.gray_400,
+        fontSize:theme.fonts.size.body.sm,
+        fontFamily:theme.fonts.family.regular,
+    },
 })

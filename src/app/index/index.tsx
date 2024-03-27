@@ -1,9 +1,10 @@
-import { View, Text, ScrollView } from "react-native"
+import { View, Text, ScrollView, Alert } from "react-native"
 
 import { styles } from "./styles"
 
 import React, { useState } from "react"
 import { Ingredient } from "@/components/Ingredient"
+import { Selected } from "@/components/Selected"
 
 
 
@@ -21,8 +22,13 @@ export default function Index(){
     }
     console.log(selected);
 }
-
+// Alert serve para o caso de clicar no botão limpar , aparece uma mensagem. colocamos um arrey com 2 opcões
 function handleClearSelected(){
+    Alert.alert("Limpar","Deseja limpar tudo?",[
+        {text: "Não", style: "cancel"},
+        {text: "Sim", onPress:()=> setSelected([])},
+
+    ])
     setSelected([])
 }
 
@@ -53,12 +59,16 @@ function handleClearSelected(){
                      ))
             }
             </ScrollView>
-
-           
             
-        </View>
+            {selected.length > 0 && (
+                <Selected
+                    quantity={selected.length}
+                    onClear={handleClearSelected}
+                    onSearch={() => {}}
+                />
+           )}
 
-       
+        </View>
 
       )
     }
